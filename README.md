@@ -1,8 +1,8 @@
-# glob-exporter
+# export-all
 
 > Simplify access to modules in a web project
 
-glob-exporter lets you access a tree of JavaScript module files from just one module.
+export-all lets you access a tree of JavaScript module files from just one module.
 
 ```js
 /* Before */
@@ -37,11 +37,11 @@ web/
     └── user_view.js
 ```
 
-Use glob-exporter on `web/index.js` so the whole tree is accessible from one point.
+Use export-all on `web/index.js` so the whole tree is accessible from one point.
 
 ```js
 /* web/index.js */
-module.exports = require('glob-exporter')(__dirname, { strip: 1 })
+module.exports = require('export-all')(__dirname, { strip: 1 })
 ```
 
 Elsewhere, you can access the individual files from auto-generated names based on their filenames.
@@ -60,7 +60,7 @@ TBD
 
 ## Thanks
 
-**glob-exporter** © 2017+, Rico Sta. Cruz. Released under the [MIT] License.<br>
+**export-all** © 2017+, Rico Sta. Cruz. Released under the [MIT] License.<br>
 Authored and maintained by Rico Sta. Cruz with help from contributors ([list][contributors]).
 
 > [ricostacruz.com](http://ricostacruz.com) &nbsp;&middot;&nbsp;
@@ -68,4 +68,4 @@ Authored and maintained by Rico Sta. Cruz with help from contributors ([list][co
 > Twitter [@rstacruz](https://twitter.com/rstacruz)
 
 [MIT]: http://mit-license.org/
-[contributors]: http://github.com/rstacruz/glob-exporter/contributors
+[contributors]: http://github.com/rstacruz/export-all/contributors
