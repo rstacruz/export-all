@@ -5,11 +5,11 @@ const join = require('path').join
  * Exports files in `root` as one object.
  * @example
  *
- *     globExport(__dirname)
- *     globExport(__dirname, { strip: 1 })
+ *     exportAll(__dirname)
+ *     exportAll(__dirname, { strip: 1 })
  */
 
-function globExport (root, options = {}) {
+function exportAll (root, options = {}) {
   const ext = options.ext || '{js,jsx}'
   const files = glob(join(root, `**/*.${ext}`))
 
@@ -72,4 +72,4 @@ function toConstant (str, options = {}) {
  * Export
  */
 
-module.exports = globExport
+module.exports = exportAll

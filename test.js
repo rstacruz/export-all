@@ -1,13 +1,13 @@
 const test = require('tape')
 const join = require('path').join
-const exporter = require('./index')
+const exportAll = require('./index')
 
 function fixture (name) {
   return join(__dirname, 'fixtures', name)
 }
 
-test('glob-exporter (default)', t => {
-  const out = exporter(fixture('simple'))
+test('export-all (default)', t => {
+  const out = exportAll(fixture('simple'))
   t.equal(out.PostController, 'PostController')
   t.equal(out.PostView, 'PostView')
   t.equal(out.Post, 'Post')
@@ -15,8 +15,8 @@ test('glob-exporter (default)', t => {
   t.end()
 })
 
-test('glob-exporter (strip)', t => {
-  const out = exporter(fixture('strip'), { strip: 1 })
+test('export-all (strip)', t => {
+  const out = exportAll(fixture('strip'), { strip: 1 })
   t.equal(out.UserController, 'UserController')
   t.equal(out.User, 'User')
   t.end()
