@@ -2,7 +2,15 @@
 
 > Simplify access to modules in a web project
 
-export-all lets you access a tree of JavaScript module files from just one module.
+export-all lets you access a tree of JavaScript module files from just one module. It lets you do this:
+
+```js
+const {
+  Article, User, UserView, UserController
+} = require('../web')
+```
+
+Instead of requiring each file, this:
 
 ```js
 /* Before */
@@ -12,12 +20,6 @@ const UserController = require('../web/controllers/user_controller')
 const UserView = require('../web/views/user_view')
 ```
 
-```js
-/* After */
-const {
-  Article, User, UserView, UserController
-} = require('../web')
-```
 
 ## Example
 
@@ -57,6 +59,18 @@ PostView        /* web/views/post_view.js */
 ## API
 
 TBD
+
+| From | To
+| ---- | ---
+| user.js | `User`
+| user/view.js | `UserView`
+| user_controller.js | `UserController`
+| post/index.js | `Post`
+| post/form/index.js | `PostForm`
+
+## Use cases
+
+Perfect for backend projects using Express/Koa. Sorry, this doesn't work with Browserify/Webpack.
 
 ## Thanks
 
