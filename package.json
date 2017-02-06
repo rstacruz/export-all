@@ -1,0 +1,15 @@
+{
+  "name": "glob-exporter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "glob": "7.1.1"
+  },
+  "devDependencies": {
+    "tape": "4.6.3"
+  },
+  "scripts": {
+    "test": "tape test.js"
+  }
+}
